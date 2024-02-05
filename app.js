@@ -1,17 +1,17 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
-const port = 3306;
+const port = 4000;
 const indexRouter = require('./controllers/index');
 const loggerMiddleware = require('./middlewares/loggerMiddleware');
-const dotenv = require('dotenv').config();
+// const dotenv = require('dotenv').config();
 
 const app = express();
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-app.use(dotenv);
+// app.use(dotenv);
 app.use(bodyParser.json());
 app.use(loggerMiddleware);
 app.use(express.json());
