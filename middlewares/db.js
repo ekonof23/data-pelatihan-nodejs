@@ -1,14 +1,15 @@
-var mysql = require("mysql2");
+var mysql = require('mysql2');
+require('dotenv').config();
 
 var conn = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "data-pelatihan",
-  multipleStatements: true,
+  host: process.env.MYSQL_ADDON_HOST,
+  database: process.env.MYSQL_ADDON_DB,
+  user: process.env.MYSQL_ADDON_USER,
+  password: process.env.MYSQL_ADDON_PASSWORD,
+  port: process.env.MYSQL_ADDON_PORT,
 });
 conn.connect(function (err) {
   if (err) throw err;
-  console.log("Database is connected successfully !");
+  console.log('Database is connected successfully !');
 });
 module.exports = conn;
