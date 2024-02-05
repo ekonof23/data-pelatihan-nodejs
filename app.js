@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
-const port = 4000;
+const port = 3306;
 const indexRouter = require('./controllers/index');
 const loggerMiddleware = require('./middlewares/loggerMiddleware');
 // const dotenv = require('dotenv').config();
